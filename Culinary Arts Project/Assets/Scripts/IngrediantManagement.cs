@@ -6,9 +6,9 @@ using TMPro;
 public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField]
-    TMP_InputField i_Cost1;
+    GameObject prefab;
     [SerializeField]
-    TMP_InputField i_Amt1;
+    GameObject layout;
     [SerializeField]
     TMP_InputField i_MR;
     [SerializeField]
@@ -24,24 +24,49 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            float Cost1 = 0;
-            float Amt1 = 0;
-            Debug.Log(float.TryParse(i_Cost1.text, out Cost1));
-            Debug.Log(float.TryParse(i_Amt1.text, out Amt1));
-            float RawCost = Cost1 * Amt1;
-            Debug.Log(RawCost);
-            float MR = 0;
-            float NumItems;
-            Debug.Log(float.TryParse(i_MR.text, out MR));
-            float MarkupCost = RawCost * MR;
-            Debug.Log(MarkupCost);
-            Debug.Log(float.TryParse(i_NumItems.text, out NumItems));
-            float totalCost = MarkupCost/NumItems;
-            Debug.Log(totalCost);
-            Price.text = totalCost.ToString();
 
+    }
+
+    public void calculate()
+    {
+        float cost = 0;
+        float amt = 0;
+        GameObject[] costs = GameObject.FindGameObjectsWithTag("cost");
+        GameObject[] quantity = GameObject.FindGameObjectsWithTag("quantity");
+        for(int i = 0; i < costs.Length; i++)
+        {
+            float temp1 = 0;
+            float.TryParse(costs[i].GetComponent<TMP_InputField>().text, out temp1);
+            cost += temp1;
         }
+        for(int i = 0;i < quantity.Length; i++)
+        {
+            float temp2 = 0;
+            float.TryParse(quantity[i].GetComponent<TMP_InputField>().text, out temp2);
+            amt += temp2;
+        }
+        float RawCost = cost * amt;
+        Debug.Log(RawCost);
+        float MR = 0;
+        Debug.Log(float.TryParse(i_MR.text, out MR));
+        float MarkupCost = RawCost * MR;
+        Debug.Log(MarkupCost);
+        float NumItems;
+        Debug.Log(float.TryParse(i_NumItems.text, out NumItems));
+        float totalCost = MarkupCost / NumItems;
+        Debug.Log(totalCost);
+        Price.text = totalCost.ToString();
+    }
+
+    public void add()
+    {
+        GameObject foo = Instantiate(prefab);
+        foo.transform.parent = layout.transform;
+        
+    }
+
+    public void quit()
+    {
+        Application.Quit();
     }
 }
