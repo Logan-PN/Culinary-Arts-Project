@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Animation
+  m_Name: heart eye test
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -739987328, guid: c74fd81886e3136489c52f033d7fbc24, type: 3}
+      value: {fileID: -1518468020, guid: 80dad20a124d3ac4e927b99b12ae8b7e, type: 3}
     - time: 0.083333336
-      value: {fileID: 207951575, guid: c74fd81886e3136489c52f033d7fbc24, type: 3}
+      value: {fileID: 210206001, guid: 80dad20a124d3ac4e927b99b12ae8b7e, type: 3}
+    - time: 0.16666667
+      value: {fileID: 992729684, guid: 80dad20a124d3ac4e927b99b12ae8b7e, type: 3}
+    - time: 0.25
+      value: {fileID: 883276005, guid: 80dad20a124d3ac4e927b99b12ae8b7e, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,14 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -739987328, guid: c74fd81886e3136489c52f033d7fbc24, type: 3}
-    - {fileID: 207951575, guid: c74fd81886e3136489c52f033d7fbc24, type: 3}
+    - {fileID: -1518468020, guid: 80dad20a124d3ac4e927b99b12ae8b7e, type: 3}
+    - {fileID: 210206001, guid: 80dad20a124d3ac4e927b99b12ae8b7e, type: 3}
+    - {fileID: 992729684, guid: 80dad20a124d3ac4e927b99b12ae8b7e, type: 3}
+    - {fileID: 883276005, guid: 80dad20a124d3ac4e927b99b12ae8b7e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16666667
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
